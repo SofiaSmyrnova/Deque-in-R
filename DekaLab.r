@@ -140,7 +140,7 @@ swap_ends <- function(x) {
 }
 
 run_menu <- function() {
-  d <- new_deka()
+  x <- new_deka()
   repeat {
     cat(" 1) Add to beginning\n")
     cat(" 2) Add to end\n")
@@ -163,56 +163,57 @@ run_menu <- function() {
       break
     } else if (choice == "1") {
       v <- readline("Value: ")
-      push_front(d, v)
-      print_deka(d)
+      push_front(x, v)
+      print_deka(x)
     } else if (choice == "2") {
       v <- readline("Value: ")
-      push_back(d, v)
-      print_deka(d)
+      push_back(x, v)
+      print_deka(x)
     } else if (choice == "3") {
-      if (is_empty(d)) {
+      if (is_empty(x)) {
         cat("Deque is empty\n")
       } else {
-        cat("Removed:", pop_front(d), "\n")
+        cat("Removed:", pop_front(x), "\n")
       }
-      print_deka(d)
+      
+      print_deka(x)
     } else if (choice == "4") {
-      if (is_empty(d)) {
+      if (is_empty(x)) {
         cat("Deque is empty\n")
       } else {
-        cat("Removed:", pop_back(d), "\n")
+        cat("Removed:", pop_back(x), "\n")
       }
-      print_deka(d)
+      print_deka(x)
     } else if (choice == "5") {
-      if (is_empty(d)) {
+      if (is_empty(x)) {
         cat("Deque is empty\n")
       } else {
-        cat("First:", peek_front(d), "\n")
+        cat("First:", peek_front(x), "\n")
       }
     } else if (choice == "6") {
-      if (is_empty(d)) {
+      if (is_empty(x)) {
         cat("Deque is empty\n")
       } else {
-        cat("Last:", peek_back(d), "\n")
+        cat("Last:", peek_back(x), "\n")
       }
     } else if (choice == "7") {
-      swap_ends(d)
-      print_deka(d)
+      swap_ends(x)
+      print_deka(x)
     } else if (choice == "8") {
-      if (is_empty(d)) cat("Deque is empty\n") else cat("Deque isn't empty\n")
+      if (is_empty(x)) cat("Deque is empty\n") else cat("Deque isn't empty\n")
     } else if (choice == "9") {
-      cat("Size:", deka_size(d), "\n")
+      cat("Size:", deka_size(x), "\n")
     } else if (choice == "10") {
-      reverse(d)
-      print_deka(d)
+      reverse(x)
+      print_deka(x)
     } else if (choice == "11") {
       v <- readline("Search gor: ")
-      if (contains(d, v)) cat("Belongs to\n") else cat("Doesn't belong to\n")
+      if (contains(x, v)) cat("Belongs to\n") else cat("Doesn't belong to\n")
     } else if (choice == "12") {
-      clear(d)
+      clear(xd)
       cat("Deque is cleared\n")
     } else if (choice == "13") {
-      print_deka(d)
+      print_deka(x)
     } else {
       cat("Unknown request\n")
     }
